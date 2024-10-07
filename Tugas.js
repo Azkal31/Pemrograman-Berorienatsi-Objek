@@ -26,13 +26,13 @@ class PembelianRuangan extends PembelianTiket {
 
 // Subclass 1: PembelianBisnis
 class PembelianBisnis extends PembelianTiket {
-  constructor(nama, tahunPeluncuran, kapasitasPenumpang, hargaVIP) {
-    super(nama, tahunPeluncuran, kapasitasPenumpang, hargaVIP);
+  constructor(nama, tahunPeluncuran, kapasitasPenumpang, hargaBisnis) {
+    super(nama, tahunPeluncuran, kapasitasPenumpang, hargaBisnis);
   }
 
   beliTiket(jumlahTiket) {
     const totalHarga = this.hargaTiket * jumlahTiket;
-    return `Pembelian ${jumlahTiket} tiket Bisnis berhasil. Total harga: Rp${totalHarga}. Kapal: ${this.nama}, Kapasitas: ${this.kapasitasPenumpang}, Harga per tiket VIP: Rp${this.hargaTiket}`;
+    return `Pembelian ${jumlahTiket} tiket Bisnis berhasil. Total harga: Rp${totalHarga}. Kapal: ${this.nama}, Kapasitas: ${this.kapasitasPenumpang}, Harga per tiket Bisnis: Rp${this.hargaTiket}`;
   }
 }
 
@@ -89,7 +89,7 @@ class PembelianMinuman extends PembelianTiket {
 
 // Testing
 const PembelianBisnis = new PembelianBisnis("Kapal Laut Budiono Siregar", 2010, 500, 500000);
-console.log(pembelianVIP.beliTiket(2));  // Membeli 2 tiket Bisnis
+console.log(pembelianBisnis.beliTiket(2));  // Membeli 2 tiket Bisnis
 
 const pembelianEkonomi = new PembelianEkonomi("Kapal Laut Budiono Siregar", 2010, 500, 100000);
 console.log(pembelianEkonomi.beliTiket(4));  // Membeli 4 tiket Ekonomi
